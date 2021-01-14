@@ -41,8 +41,8 @@ public class MarketTests {
         Assert.assertTrue(manufacturer.getMax() <= upperPrice);
 
         NotebookPage notebookPage = homePage
-                .sortList()
                 .selectBorders(manufacturer.getMin(), manufacturer.getMax())
+                .sortList()
                 .selectNotebook()
                 .toCharacteristics()
                 .takeScreenshot(manufacturer.getName());
