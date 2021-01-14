@@ -40,10 +40,11 @@ public class MarketTests {
 
         Assert.assertTrue(manufacturer.getMax() <= upperPrice);
 
-        NotebookPage notebookPage = homePage
+        NotebookPage notebookPage =  homePage
                 .selectBorders(manufacturer.getMin(), manufacturer.getMax())
                 .sortList()
                 .selectNotebook()
+                .checkProduct(manufacturer.getName())
                 .toCharacteristics()
                 .takeScreenshot(manufacturer.getName());
 
@@ -52,8 +53,6 @@ public class MarketTests {
                 notebookPage.getDiagonal(),
                 notebookPage.getWeight(notebookPage.getName())
         ));
-
-        Assert.assertEquals(notebookPage.getManufacturer(), manufacturer.getName());
     }
 
     @AfterMethod
