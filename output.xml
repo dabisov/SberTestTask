@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Parameters>
+    <Global>
+        <Price>
+            <Max>90000</Max>
+        </Price>
+        <Excluded_vendors rating="4">
+            <Vendor>microprice</Vendor>
+            <Vendor>полюс</Vendor>
+        </Excluded_vendors>
+    </Global>
+    <Manufacturers>
+        <Manufacturer products="notebook, pc, tablet, cell">
+            <Name>ASUS</Name>
+            <PriceLimit>
+                <Min>32190</Min>
+                <Max>74120</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="pc">
+            <Name>HP</Name>
+            <PriceLimit>
+                <Min>15140</Min>
+                <Max>54150</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="notebook, pc, tablet, cell">
+            <Name>Lenovo</Name>
+            <PriceLimit>
+                <Min>12500</Min>
+                <Max>87330</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="tablet, cell">
+            <Name>Apple</Name>
+            <PriceLimit>
+                <Min>25000</Min>
+                <Max>89990</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="notebook">
+            <Name>DELL</Name>
+            <PriceLimit>
+                <Min>32190</Min>
+                <Max>85490</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="pc">
+            <Name>Alienware</Name>
+            <PriceLimit>
+                <Min>125000</Min>
+                <Max>521560</Max>
+            </PriceLimit>
+        </Manufacturer>
+        <Manufacturer products="notebook, cell">
+            <Name>Samsung</Name>
+            <PriceLimit>
+                <Min>32190</Min>
+                <Max>95490</Max>
+            </PriceLimit>
+        </Manufacturer>
+    </Manufacturers>
+</Parameters>
