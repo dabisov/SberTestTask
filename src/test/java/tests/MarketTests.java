@@ -32,9 +32,8 @@ public class MarketTests {
                 .toNotebooks();
     }
 
-    @Test(description = "Тесты на странице", dataProvider = "data-provider", dataProviderClass = DataProvider.class)
+    @Test(description = "Тест страниц", dataProvider = "data-provider", dataProviderClass = DataProvider.class)
     public void marketTest(Manufacturer manufacturer, int upperPrice) throws IOException {
-
         homePage
                 .showFullList()
                 .selectNotebookFromList(manufacturer.getName());
@@ -54,9 +53,7 @@ public class MarketTests {
                 notebookPage.getWeight(notebookPage.getName())
         ));
 
-        Assert.assertEquals(manufacturer.getName(), notebookPage.getManufacturer());
-        ;
-
+        Assert.assertEquals(notebookPage.getManufacturer(), manufacturer.getName());
     }
 
     @AfterMethod
