@@ -33,19 +33,18 @@ public class MarketTests {
     }
 
     @Test(description = "Тесты на странице", dataProvider = "data-provider", dataProviderClass = DataProvider.class)
-    public void marketTest(Manufacturer manufacturer, int upperPrice) throws IOException  {
+    public void marketTest(Manufacturer manufacturer, int upperPrice) throws IOException {
 
         homePage
-            .showFullList()
-            .selectNotebookFromList(manufacturer.getName());
+                .showFullList()
+                .selectNotebookFromList(manufacturer.getName());
 
         Assert.assertTrue(manufacturer.getMax() <= upperPrice);
 
-       NotebookPage notebookPage =  homePage
+        NotebookPage notebookPage = homePage
                 .sortList()
                 .selectBorders(manufacturer.getMin(), manufacturer.getMax())
                 .selectNotebook()
-                .checkProduct(manufacturer.getName())
                 .toCharacteristics()
                 .takeScreenshot(manufacturer.getName());
 
@@ -54,6 +53,10 @@ public class MarketTests {
                 notebookPage.getDiagonal(),
                 notebookPage.getWeight(notebookPage.getName())
         ));
+
+        Assert.assertEquals(manufacturer.getName(), notebookPage.getManufacturer());
+        ;
+
     }
 
     @AfterMethod

@@ -23,13 +23,6 @@ public class NotebookPage {
         switchTo().window(1);
     }
 
-    @Step("Сравнить производителя с 'product'")
-    public NotebookPage checkProduct(String product) {
-        $(byXpath("//ul[@itemtype='https://schema.org/BreadcrumbList']/li[2]/div/a/span"))
-                .shouldBe(visible).shouldHave(text(product));
-        return this;
-    }
-
     @Step("Перейти в характеристики")
     public NotebookPage toCharacteristics() {
         $(byXpath("//span[text()='Характеристики']"))
@@ -77,5 +70,9 @@ public class NotebookPage {
             return 0d;
         }
     }
-
+    @Step("Получить имя производителя")
+    public String getManufacturer() {
+        return $(byXpath("//ul[@itemtype='https://schema.org/BreadcrumbList']/li[2]/div/a/span"))
+                .shouldBe(visible).text();
+    }
 }
